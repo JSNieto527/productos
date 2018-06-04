@@ -1,0 +1,28 @@
+﻿@model ListaProductosViewsModels
+@{
+    ViewBag.Title = "Productos";
+}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h2 class="display-5">@Model.DatosProductos</h2>
+        <p class="lead">Vista donde se muestran los Productos</p>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>Nombres Productos</th>
+            <th>Descripcion</th>
+            <!--<th>@Html.ActionLink("Listado de Productos", "ListaProductos", "Productos")</th>-->
+        </tr>
+        @foreach (var productos in Model.Productos)
+        {
+            <tr>
+                <td>@productos.nomProductos</td>
+                <td>@productos.desProductos</td>
+            </tr>
+        }
+    </table>
+</div>

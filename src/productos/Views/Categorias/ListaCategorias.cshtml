@@ -1,0 +1,29 @@
+﻿@model ListaCategoriasViewsModels
+@{
+    ViewBag.Title = "Categorias";
+}
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h2 class="display-5">@Model.DatosCategorias</h2>
+        <p class="lead">Vista donde se muestran las categorias de los productos</p>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>Nombres Categorias</th>
+            <th>Categorias</th>
+            <!--<th>@Html.ActionLink("Listado Categorias", "ListaCategoria", "Categoria")</th>-->
+        </tr>
+        @foreach (var categorias in Model.Categorias)
+        {
+            <tr>
+                <td>@categorias.Nomcategoria</td>
+                <td>@categorias.Categorias</td>
+            </tr>
+        }
+    </table>
+    </div>
